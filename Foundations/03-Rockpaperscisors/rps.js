@@ -63,6 +63,26 @@ function displayResult() {
   document.getElementById("gameResult").innerHTML = gameResult;
   document.getElementById("playerScore").innerHTML = playerScore;
   document.getElementById("computerScore").innerHTML = computerScore;
+  scoreboard();
+  
+}
+
+function scoreboard(){
+
+  if (playerScore >= 5){
+    document.getElementById("Score").innerHTML = "You won this battle!";
+    document.getElementById("rivalChoice").innerHTML = "";
+    document.getElementById("player").innerHTML = "";
+    document.getElementById("computer").innerHTML = "";
+
+    
+  } else if (computerScore >= 5) {
+    document.getElementById("Score").innerHTML = "You lost this battle!";
+    document.getElementById("rivalChoice").innerHTML = "";
+    document.getElementById("player").innerHTML = "";
+    document.getElementById("computer").innerHTML = "";
+
+  }
 }
 
 function game() {
