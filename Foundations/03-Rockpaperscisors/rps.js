@@ -1,3 +1,12 @@
+/* Note 11JUL23:
+  Pending to add a function that prevents the game to keep executing 
+  after player or computer wins, plus a button to restart the game.
+
+  Also pending to change the scoreboard's representation in order to 
+  make it more interactive.
+*/
+
+
 const options = ["rock", "paper", "scissors"];
 let playerChoice;
 let gameResult;
