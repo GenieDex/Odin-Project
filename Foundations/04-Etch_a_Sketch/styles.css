@@ -37,25 +37,24 @@ justify-content: center;
 
 #clear{
     height: 7vh;
-    width: 7vh;
+    width: 14vh;
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
     align-self: flex-end;
 }
 #rainbowMode{
     height: 7vh;
-    width: 14vh;
+    width: 7vh;
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
     align-self: flex-end;
 }
-#eraserCheck{
-    height: 4vh;
-    width: 4vh;
+#eraser{
+    height: 7vh;
+    width: 7vh;
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
-    margin-top: 0;
-    margin-left: 10px;
+    align-self: flex-end;
 }
 
 h1{
