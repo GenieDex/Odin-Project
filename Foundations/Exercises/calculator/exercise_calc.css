@@ -3,7 +3,7 @@
 }
 
 html{
-    background-color: #303030;
+    background-color: #202020;
 }
 h1{
     text-align: center;
@@ -69,4 +69,9 @@ button:hover{
 }
 button:active{
     background-color: rgb(200, 200, 200);
+}
+
+
+#AC{
+    background-color: #323232;
 }
