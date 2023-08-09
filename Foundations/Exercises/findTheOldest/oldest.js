@@ -1,42 +1,41 @@
 const people = [
     {
-        name: " ",
-        birth: 1,
-        death: 1,
+        name: "Person 1",
+        birth: 1940,
+        death: 2003,
     },
     {
-        name: " ",
-        birth: 1,
-        death: 1,
+        name: "Person 2",
+        birth: 2000,
+        death: 2023,
     },
     {
-        name: " ",
-        birth: 1,
-        death: 1,
+        name: "Person 3",
+        birth: 1999,
+        death: 2023,
     },
     {
-        name: " ",
-        birth: 1,
-        death: 1,
+        name: "Person 4",
+        birth: 1963,
+        death: 2000,
     },
     {
-        name: " ",
-        birth: 1,
-        death: 1,
+        name: "Person 5",
+        birth: 1943,
+        death: 2020,
     }
 ]   
 
-function findTheOldest(){
+function findTheOldest(people){
     let oldest = "";
-    let daysLived;
+    let yearsLived;
+    let mostYears = 0;
     for (i=0; i<people.length; i++){
-        daysLived = people[i.death]-people[i].birth;
-        if (people[(i+1).death]-people[i].birth>daysLived){
+        yearsLived=people[i].death - people[i].birth;
+        if(yearsLived>mostYears){
             oldest = people[i].name;
-        }else{
-            oldest = people[0].name
         }
-        return oldest;
     }
-    console.log(findTheOldest());
+    return oldest;
 }
+console.log(findTheOldest(people));
