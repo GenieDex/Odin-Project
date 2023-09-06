@@ -1,40 +1,96 @@
-let num1;
-let num2;
+let currentInput = '';
+let currentOperator = '';
+let firstOperand = '';
+let secondOperand = '';
+const numberButtons = document.querySelectorAll('.numbers');
 
-function sum(num1,num2){
-    
-    return (num1 + num2);
+function addEventListenerToButtons() {
+    // AC
+    document.getElementById('reset').addEventListener('click', clearDisplay);
+
+    // C
+    document.getElementById('delete').addEventListener('click', clearDisplay);
+
+    // Numbers
+    numberButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            appendNumber(button.textContent);
+        });
+    });
+
+    // =
+    document.getElementById('equals').addEventListener('click', calculate);
 }
 
-function substract(num1,num2){
-
-    return (num1 - num2);
+function modelo() {
+    if (Se ha pulsado algún boton) {
+        currentInput += number;
+        updateDisplay();
+    } else {
+        updateDisplay()
+    }
 }
 
-function multiply (num1,num2){
-
-    return (num1 * num2);
+function updateDisplay() {
+    document.getElementById("display").innerText = currentInput;
 }
 
-function divide (num1,num2){
-
-    return (num1 / num2);
+function appendNumber(number) {
+    currentInput += number;
+    updateDisplay();
+}
+function clearDisplay() {
+    currentInput = '';
+    firstOperand = '';
+    secondOperand = '';
+    currentOperator = '';
+    updateDisplay();
 }
 
-function power (num1){
-    return (num1*num1);
+function calculate() {
+    if (currentInput !== '') {
+        secondOperand = currentInput;
+        currentInput = '';
+
+        const num1 = parseFloat(firstOperand);
+        const num2 = parseFloat(secondOperand);
+
+        switch (currentOperator) {
+            case '+':
+                currentInput = (num1 + num2).toString();
+                break;
+            case '-':
+                currentInput = (num1 - num2).toString();
+                break;
+            case '*':
+                currentInput = (num1 * num2).toString();
+                break;
+            case '÷':
+                if (num2 !== 0) {
+                    currentInput = (num1 / num2).toString();
+                } else {
+                    currentInput = 'Error';
+                }
+                break;
+            case '^':
+                currentInput = Math.pow(num1, num2).toString();
+                break;
+        }
+
+        updateDisplay();
+    }
 }
 
-function factorial (num1){
-    let factorial;
-    for (i=0;i<num1;i++){
-        factorial+=i;
-    }   
-    return factorial+num1;
+function appendOperator(operator) {
+    if (currentInput !== '') {
+        if (firstOperand === '') {
+            firstOperand = currentInput;
+            currentInput = '';
+        } else {
+            calculate();
+        }
+        currentOperator = operator;
+    }
 }
 
-function allClear(){
-
-    num1 = 0;
-    num2 = 0;
-}
+addEventListenerToButtons();
